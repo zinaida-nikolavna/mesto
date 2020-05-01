@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button class="user-info__btn-edit" data-popup='popup-editProfile'>Edit</button>
+        </div>
+        <button class="button user-info__button" data-popup='popup-createCard'>+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+    </div>
+
+    <div id="popup-createCard" class="popup">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close" id="close_createCard">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" novalidate name="add" id="popup__form_addCard">
+          <div class="input-container">
+            <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" required
+              minlength="2" maxlength="30">
+            <span id="error-name" class="error-message error-message__hidden"></span>
+          </div>
+          <div class="input-container">
+            <input type="url" name="link" class="popup__input popup__input_type_link-url"
+              placeholder="Ссылка на картинку" required>
+            <span id="error-link" class="error-message error-message__hidden"></span>
+          </div>
+          <button type="submit" class="button popup__button popup__button_save" id="btn_save"
+            disabled>Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="popup-editProfile" class="popup">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close" id="close_editProfile">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form" novalidate name="userProfile" id="popup__form_edit">
+          <div class="input-container">
+            <input type="text" name="username" class="popup__input popup__input_type_name" placeholder="Имя" required
+              minlength="2" maxlength="30">
+            <span id="error-username" class="error-message error-message__hidden"></span>
+          </div>
+          <div class="input-container">
+            <input type="text" name="aboutuser" class="popup__input popup__input_type_link-url" placeholder="О себе"
+              required minlength="2" maxlength="30">
+            <span id="error-aboutuser" class="error-message error-message__hidden"></span>
+          </div>
+          <button type="submit" class="button popup__button popup__button_save popup__button_active"
+            id="btn_editProfile">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup__image">
+      <div class="popup__content-image">
+        <div class="popup__image-container">
+          <img src="" alt="" class="popup__image_open">
+        </div>
+        <img src="./images/close.svg" alt="" class="popup__close" id="close_image">
+      </div>
+    </div>
+
+    <div id="popup-userAvatar" class="popup">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close" id="close_userAvatar">
+        <h3 class="popup__title">Обновить аватар</h3>
+        <form class="popup__form" novalidate name="avatar" id="popup__form_userAvatar">
+          <div class="input-container">
+            <input type="url" name="avatar" class="popup__input popup__input_type_link-url"
+              placeholder="Ссылка на аватар" required>
+            <span id="error-avatar" class="error-message error-message__hidden"></span>
+          </div>
+          <button type="submit" class="button popup__button popup__button_save" id="btn_avatar"
+            disabled>Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <script src='js/Card.js'></script>
+  <script src='js/CardList.js'></script>
+  <script src='js/Popup.js'></script>
+  <script src='js/UserInfo.js'></script>
+  <script src='js/FormValidator.js'></script>
+  <script src='js/UserAvatar.js'></script>
+  <script src='js/RenderLoading.js'></script>
+  <script src='js/Api.js'></script>
+  <script src='js/index.js'></script>
+</body>
+
+</html>
