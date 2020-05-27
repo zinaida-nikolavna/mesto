@@ -1,3 +1,13 @@
+import "./index.css";
+
+import Api from './js/Api.js';
+import Card from './js/Card.js';
+import CardList from './js/CardList.js';
+import FormValidator from './js/FormValidator.js';
+import Popup from './js/Popup.js';
+import RenderLoading from './js/RenderLoading.js';
+import UserAvatar from './js/UserAvatar.js';
+import UserInfo from './js/UserInfo.js';
 // объявление переменных
 // формы
 const formUserCard = document.forms.add;

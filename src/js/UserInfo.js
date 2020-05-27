@@ -1,4 +1,4 @@
-class UserInfo {
+export default class UserInfo {
   constructor(form, user, aboutUser, api, render, photo) {
     this.form = form;
     this.user = user;
