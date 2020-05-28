@@ -8,6 +8,8 @@ import Popup from './js/Popup.js';
 import RenderLoading from './js/RenderLoading.js';
 import UserAvatar from './js/UserAvatar.js';
 import UserInfo from './js/UserInfo.js';
+
+const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort10/' : 'https://praktikum.tk/cohort10/';
 // объявление переменных
 // формы
 const formUserCard = document.forms.add;
@@ -44,7 +46,7 @@ const popupFormAvatar = document.querySelector('#popup__form_userAvatar');
 const cardContainer = new CardList(placesList);
 
 //создаем экземпляры классов
-const api = new Api('https://praktikum.tk/cohort10/', 'b9a3a21d-fe30-4080-88da-a3de534f7e53');
+const api = new Api(serverUrl, 'b9a3a21d-fe30-4080-88da-a3de534f7e53');
 const renderLoadingCard = new RenderLoading(btnSaveAdd, popupAddCard);
 const renderLoadingUser = new RenderLoading(btnSaveEdit, popupEditCard);
 const renderLoadingAvatar = new RenderLoading(btnSaveAvatar, popupUserAvatar)

@@ -1,8 +1,8 @@
 {
-  "name": "sprint-9",
+  "name": "sprint-11",
   "homepage": "https://github.com/zinaida-nikolavna/mesto#readme",
   "version": "1.0.0",
-  "description": "",
+  "description": "учебный проект по JS",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
