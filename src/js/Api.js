@@ -1,10 +1,10 @@
-class Api {
-  constructor(baseURL, token) {
-    this.baseURL = baseURL;
+export default class Api {
+  constructor(baseUrl, token) {
+    this.baseUrl = baseUrl;
     this.token = token;
   }
   getUserInfo() {
-    return fetch(this.baseURL + 'users/me', {
+    return fetch(this.baseUrl + 'users/me', {
       headers: {
         authorization: this.token
       }
@@ -19,7 +19,7 @@ class Api {
   }
 
   getCards() {
-    return fetch(this.baseURL + 'cards', {
+    return fetch(this.baseUrl + 'cards', {
       headers: {
         authorization: this.token
       }
@@ -36,7 +36,7 @@ class Api {
   patchUserInfo(name, about) {
     this.name = name;
     this.about = about
-    return fetch(this.baseURL + 'users/me', {
+    return fetch(this.baseUrl + 'users/me', {
       method: 'PATCH',
       headers: {
         authorization: this.token,
@@ -59,7 +59,7 @@ class Api {
   postNewCard(nameCard, link) {
     this.nameCard = nameCard;
     this.link = link
-    return fetch(this.baseURL + 'cards', {
+    return fetch(this.baseUrl + 'cards', {
       method: 'POST',
       headers: {
         authorization: this.token,
@@ -80,7 +80,7 @@ class Api {
   }
 
   deleteCard(id) {
-    return fetch(this.baseURL + `cards/` + id, {
+    return fetch(this.baseUrl + `cards/` + id, {
       method: 'DELETE',
       headers: {
         authorization: this.token,
@@ -97,7 +97,7 @@ class Api {
   }
 
   putLike(id) {
-    return fetch(this.baseURL + `cards/like/` + id, {
+    return fetch(this.baseUrl + `cards/like/` + id, {
       method: 'PUT',
       headers: {
         authorization: this.token,
@@ -114,7 +114,7 @@ class Api {
   }
 
   deleteLike(id) {
-    return fetch(this.baseURL + `cards/like/` + id, {
+    return fetch(this.baseUrl + `cards/like/` + id, {
       method: 'DELETE',
       headers: {
         authorization: this.token,
@@ -132,7 +132,7 @@ class Api {
 
   patchUserAvatar(avatar) {
     this.avatar = avatar;
-    return fetch(this.baseURL + 'users/me/avatar', {
+    return fetch(this.baseUrl + 'users/me/avatar', {
       method: 'PATCH',
       headers: {
         authorization: this.token,

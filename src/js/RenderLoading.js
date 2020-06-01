@@ -1,4 +1,4 @@
-class RenderLoading {
+export default class RenderLoading {
     constructor(btnSave, popup) {
         this.btnSave = btnSave;
         this.popup = popup
